@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;800&display=swap");
+* {
+  font-family: "Manrope", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  color: midnightblue;
+  text-align: center;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 38px;
+}
+p {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.flex {
+  display: flex;
+}
+.flex-1 {
+  flex: 1;
+}
+
+.container {
+  padding: 50px 0;
+}
+
+.row {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.text-highlight {
+  color: midnightblue;
+}
+
+section:nth-child(odd) {
+  background-color: #fff8dc;
+}
+
+.section_title {
+  margin-bottom: 20px;
+}
+
+/* Navigation bar */
+nav {
+  height: 100px;
+  width: 100%;
+  padding: 0 200px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: cornsilk;
+}
+
+.nav_link-list {
+  display: flex;
+}
+
+.nav_link-anchor {
+  margin: 0 12px;
+  color: rgb(59, 85, 105);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.nav_link-anchor:hover {
+  color: midnightblue;
+}
+
+.main_logo {
+  font-size: 26px;
+  color: midnightblue;
+  margin: 0 12px;
+  font-weight: bold;
+}
+
+/* About */
+
+#about-paramore {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.about_info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about_info-parag {
+  text-align: justify;
+}
+.about_info-parag1 {
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.about_photo-mask {
+  height: 500px;
+  overflow: hidden;
+  box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.336);
+  margin-bottom: 28px;
+}
+
+.about_photo {
+  width: 100%;
+}
+
+.about_info-parag {
+  font-size: 20px;
+  margin-bottom: 28px;
+}
+
+.about_links {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.about_link {
+  font-size: 50px;
+  width: 50px;
+  color: black;
+  text-decoration: none;
+  padding: 0 16px;
+}
+
+.logo {
+  width: 40px;
+}
+/* Album covers */
+
+.album_img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 9%;
+}
+
+.album:hover .album_img:hover {
+  filter: brightness(60%);
+  opacity: 0.9;
+  transform: scale(0.95);
+}
+
+.album {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.album_img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 16px;
+}
+
+.album_list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.album_name {
+  position: absolute;
+  bottom: 0;
+  transform: scale(0);
+  transition: all 250ms;
+  font-size: 18px;
+  opacity: 0;
+}
+
+.album:hover .album_name {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Members */
+.member_info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.member_photo-mask {
+  width: 450px;
+  height: 550px;
+  overflow: hidden;
+  box-shadow: 7px 8px 20px rgba(0, 0, 0, 0.336);
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 35px;
+}
+
+.member_name {
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.about_member-parag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Adjust photo */
+.hayley_photo {
+  margin-top: -180px;
+  margin-left: -80px;
+}
+
+.zack_photo {
+  margin-top: -100px;
+  margin-left: -150px;
+}
+
+.taylor_photo {
+  margin-top: -70px;
+  margin-left: -165px;
+}
