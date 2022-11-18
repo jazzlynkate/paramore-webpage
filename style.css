@@ -77,7 +77,7 @@ nav {
 
 .nav_link-anchor {
   margin: 0 12px;
-  color: rgb(59, 85, 105);
+  color: rgb(72, 89, 122);
   text-decoration: none;
   font-weight: 800;
 }
@@ -234,7 +234,7 @@ nav {
   opacity: 1;
 }
 
-/* For videos */
+/* Videos */
 
 .videos_list {
   display: flex;
@@ -290,4 +290,34 @@ nav {
   height: 80%;
   margin: 0 auto;
   background: teal;
+}
+
+/* Achievements*/
+.table {
+  align-items: center;
+  display: flex;
+}
+
+/* Biography */
+._grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: var(--column-gap);
+  column-gap: var(--column-gap);
+}
+
+.grid_item {
+  align-items: center;
+  background: #b1c6ff;
+  display: flex;
+  height: max(200px, 25vh);
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  flex-direction: column;
+  width: 200px;
+}
+
+.grid_item img {
+  width: 100%;
 }
