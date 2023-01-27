@@ -20,10 +20,12 @@ span {
 
 h1 {
   font-size: 38px;
+  font-family: "Manrope", sans-serif;
 }
 p {
   line-height: 1.5;
   font-size: 16px;
+  font-family: "Manrope", sans-serif;
 }
 
 li {
@@ -48,6 +50,8 @@ li {
 }
 
 .text-highlight {
+  font-size: x-large;
+  font-family: "Manrope", sans-serif;
   color: midnightblue;
 }
 
@@ -135,7 +139,7 @@ body {
 
 #_footer {
   bottom: 0;
-  position: absolute;
+  align-self: flex-end;
   width: 100%;
 }
 
