@@ -4,24 +4,25 @@ session_start();
 
 if ($_POST) {
 
-  $firstName = $_POST['firstName'];
-  $lastName = $_POST['lastName'];
-  $emailAddress = $_POST['emailAddress'];
-  $username = $_POST['username'];
-  $password = md5($_POST['password']);
-  $dateCreated = date('Y-m-d H:i:s');
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $emailAddress = $_POST['emailAddress'];
+    $username = $_POST['username'];
+    $password = md5($_POST['password']);
+    $dateCreated = date('Y-m-d H:i:s');
 
-  $query = $dbh->query("SELECT COUNT(*) FROM users where username = '" . $username . "'");
-  $count = $query->fetchColumn();
+    $query = $dbh->query("SELECT COUNT(*) FROM users where username = '" . $username . "'");
+    $count = $query->fetchColumn();
 
-  if ($count > 0) {
-    $message = "User already exists.";
-  } else {
-    //insert to db
-    $insert = $dbh->query("INSERT INTO users (username,password,firstName,lastName,emailAddress,dateCreated) VALUES('" . $username . "','" . $password . "','" . $firstName . "','" . $lastName . "','" . $emailAddress . "','" . $dateCreated . "')");
-    $_SESSION['msg'] = "Account successfully created. You can login now.";
-    header("location: login.php");
-  }
+    if ($count > 0) {
+        $_SESSION['msg'] = "User already exists.";
+    } else {
+        //insert to db
+        $insert = $dbh->query("INSERT INTO users (username,password,firstName,lastName,emailAddress,dateCreated) VALUES('" . $username . "','" . $password . "','" . $firstName . "','" . $lastName . "','" . $emailAddress . "','" . $dateCreated . "')");
+        $_SESSION['msg'] = "Account successfully created. You can login now.";
+        header("location: login.php");
+        exit();
+    }
 
 
 }
@@ -54,8 +55,8 @@ function matchPass() {
 }
 <?php
 if ($_SESSION['msg']) {
-  echo "alert('" . $_SESSION['msg'] . "')";
-  unset($_SESSION['msg']);
+    echo "alert('" . $_SESSION['msg'] . "')";
+    unset($_SESSION['msg']);
 } ?>
 </script>
 

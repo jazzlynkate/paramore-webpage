@@ -31,10 +31,10 @@ if ($_POST) {
 <script type="text/javascript">
 <?php
 
-if ($_SESSION['msg']) {
-    echo "alert('" . $_SESSION['msg'] . "')";
-    unset($_SESSION['msg']);
-} ?>
+    if ($_SESSION['msg']) {
+        echo "alert('" . $_SESSION['msg'] . "')";
+        unset($_SESSION['msg']);
+    } ?>
 </script>
 
 <body>

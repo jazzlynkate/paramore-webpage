@@ -21,13 +21,14 @@ if ($_POST) {
     $city = $_POST['city'];
     $province = $_POST['province'];
     $zip = $_POST['zip'];
+    $name = $firstName . " " . $lastName;
     $address = $street . " " . $city . " " . $province . " " . $zip;
     $cardNum = $_POST['cardNum'];
     $expire = $_POST['expire'];
     $ccv = $_POST['ccv'];
     $dateCreated = date("Y-m-d H:i:s");
 
-    $insert = $dbh->query("INSERT INTO orders (productId,qty,address,dateCreated,total,ccNum,ccExp,ccv) VALUES('" . $productId . "','" . $qty . "','" . $address . "','" . $dateCreated . "','" . $total . "','" . $cardNum . "','" . $expire . "','" . $ccv . "')");
+    $insert = $dbh->query("INSERT INTO orders (productId,qty,name,address,dateCreated,total,ccNum,ccExp,ccv) VALUES('" . $productId . "','" . $qty . "','" . $name . "','" . $address . "','" . $dateCreated . "','" . $total . "','" . $cardNum . "','" . $expire . "','" . $ccv . "')");
     $_SESSION['msg'] = "Successfully ordered " . $qty . " " . $product['name'];
     header("Location: store.php");
 
@@ -127,9 +128,7 @@ if ($_POST) {
                     <button type="submit">Purchase</button>
                 </div>
                 <div class="btnback">
-                    <button onclick="./paramore/store.php">
-                        Back to Store
-                    </button>
+                    <a href="http://localhost/paramore/store.php">Back to Store</a>
                 </div>
             </div>
         </form>
