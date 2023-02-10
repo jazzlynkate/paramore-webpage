@@ -111,16 +111,16 @@ if ($_POST) {
             </h2>
             <div class="cc-num">
                 <label for="cardNum">Credit Card No.</label>
-                <input type="text" required name="cardNum">
+                <input type="text" maxlength=16 required name="cardNum">
             </div>
             <div class="cc-info">
                 <div>
                     <label for="expire">Exp</label>
-                    <input type="text" required name="expire">
+                    <input type="text" maxlength=5 required name="expire">
                 </div>
                 <div>
                     <label for="ccv">CCV</label>
-                    <input type="number" min="0" required name="ccv">
+                    <input type="text" maxlength=3 required name="ccv">
                 </div>
             </div>
             <div class="btncheckout">
@@ -134,14 +134,14 @@ if ($_POST) {
         </form>
     </div>
     <script type="text/javascript">
-    var price = <?php echo $product['price']; ?>;
+        var price = <?php echo $product['price']; ?>;
 
-    var qtyElement = document.querySelector('.qty');
-    qtyElement.addEventListener('change', (event) => {
-        var totalAmount = event.target.value * price;
-        var total = document.querySelector('.total');
-        total.textContent = "TOTAL: " + totalAmount + "PHP";
-    });
+        var qtyElement = document.querySelector('.qty');
+        qtyElement.addEventListener('change', (event) => {
+            var totalAmount = event.target.value * price;
+            var total = document.querySelector('.total');
+            total.textContent = "TOTAL: " + totalAmount + "PHP";
+        });
     </script>
 </body>
 

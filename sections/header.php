@@ -22,19 +22,15 @@
         <?php
 
 
-        if ($_SESSION && $_SESSION['user']) {
+        if ($_SESSION && isset($_SESSION['user'])) {
             echo "
              <li>
                 <a href='./logout.php' class='nav_link-anchor link_hover-effect link_hover-effect-black'>
-                    Logout</a>
+                    Log out</a>
             </li>
             ";
         } else {
             echo "
-            <li>
-                <a href='./login.php' class='nav_link-anchor link_hover-effect link_hover-effect-black'>
-                    Login</a>
-            </li>
             <li>
                 <a href='./register.php' class='nav_link-anchor link_hover-effect link_hover-effect-black'>
                     Register</a>

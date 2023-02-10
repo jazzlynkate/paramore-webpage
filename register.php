@@ -93,7 +93,7 @@ if ($_SESSION['msg']) {
                 </div>
 
                 <button type="submit" class="button button-block">
-                    Register Now
+                    Register
                 </button>
             </div>
         </form>

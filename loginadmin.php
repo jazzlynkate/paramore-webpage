@@ -5,14 +5,14 @@ if ($_POST) {
     $username = $_POST['username'];
     $password = md5($_POST['password']);
 
-    $query = $dbh->query("SELECT * FROM users where username = '$username' and password='$password'");
+    $query = $dbh->query("SELECT * FROM admins where username = '$username' and password='$password'");
     $user = $query->fetch();
 
     if (!$user) {
-        $_SESSION['msg'] = "User not found.";
+        $_SESSION['msg'] = "Admin not found.";
     } else {
         $_SESSION['user'] = $user;
-        header("location: store.php");
+        header("location: adminstore.php");
     }
 }
 ?>
@@ -24,7 +24,7 @@ if ($_POST) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log in | User</title>
+    <title>Log in | Admin</title>
     <link rel="stylesheet" href="./stylereg.css" />
 </head>
 
@@ -57,8 +57,6 @@ if ($_POST) {
                 <button type="submit" class="button button-block">
                     Log in
                 </button>
-                <p style="text-align: center; margin-top: 24px;">Not yet registered huh? <a href="register.php">Create
-                        an account</a></p>
             </div>
         </form>
     </div>

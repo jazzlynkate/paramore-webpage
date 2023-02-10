@@ -4,7 +4,8 @@ session_start();
 
 if (!$_SESSION['user']) {
     $_SESSION['msg'] = "You need to login first.";
-    header("location: login.php");
+    header("location: option.php");
+    exit();
 }
 
 
@@ -23,7 +24,7 @@ $products = $query->fetchAll();
     <title>Store</title>
     <link rel="stylesheet" href="./stylereg.css" />
     <script type="text/javascript">
-    <?php
+        <?php
         if ($_SESSION['msg']) {
             echo "alert('" . $_SESSION['msg'] . "')";
             unset($_SESSION['msg']);
@@ -36,18 +37,18 @@ $products = $query->fetchAll();
     <section class="store">
         <div class="products">
             <?php foreach ($products as $product): ?>
-            <div class="product-container">
-                <div class="product_img"><img src="./assets/products/<?php echo $product['image']; ?>" alt=""></div>
-                <div class="product_name">
-                    <?php echo $product['name']; ?>
-                </div>
-                <div class="box">
-                    <div class="price">
-                        <?php echo $product['price']; ?> PHP
+                <div class="product-container">
+                    <div class="product_img"><img src="./assets/products/<?php echo $product['image']; ?>" alt=""></div>
+                    <div class="product_name">
+                        <?php echo $product['name']; ?>
                     </div>
-                    <a href="checkout.php?id=<?php echo $product['id']; ?>" class="btnstore">Buy Now</a>
+                    <div class="box">
+                        <div class="price">
+                            <?php echo $product['price']; ?> PHP
+                        </div>
+                        <a href="checkout.php?id=<?php echo $product['id']; ?>" class="btnstore">Buy Now</a>
+                    </div>
                 </div>
-            </div>
 
             <?php endforeach; ?>
 
